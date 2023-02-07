@@ -1,0 +1,66 @@
+<!--pages/goSearch/goSearch.wxml-->
+<view class="container">
+  <view class="search_box">
+    <input type="text" placeholder="搜索歌曲"  bindinput="inputFn" bindconfirm="getSearchList" model:value="{{searchWord}}" />
+    <van-icon name="cross" class=" cancel_icon" />
+    <van-icon name="search" class="search_icon" />
+  </view>
+  <scroll-view scroll-y="true" class="scroll_box">
+    <view class="search_container">
+      <view class="search_history " wx:if="{{ seacrhType==1}}">
+        <!-- 搜索记录 -->
+        <view class="history_list">
+          <view class="history_title">
+            <view class="title">历史记录</view>
+            <van-icon name="delete-o" bindtap="delHistory" />
+          </view>
+          <view class="list">
+            <view class="history_item" data-searchword="{{ item }}"   wx:for="{{historyList}}" wx:key="index" bindtap="clickHistory" >
+              {{item}}
+            </view>
+          </view>
+        </view>
+        <!-- 热搜榜 -->
+        <view class="hot_list">
+          <view class="title">热搜榜</view>
+          <view class="list">
+            <view class="hot_item" ata-searchword="{{ item.searchWord }}" bindtap="clickHistory"  wx:for="{{hotList}}" wx:key="index">
+              <view class="item_left">
+                <view class="sort {{index<=2?'red':'gray'}}">
+                  {{index+1}}
+                </view>
+                <view class="name">
+                  <view class="top">{{item.searchWord}}
+                  </view>
+                  <view class="bottom">{{item.content}}
+
+                  </view>
+
+                </view>
+              </view>
+              <view class="item_right">{{item.score}}</view>
+            </view>
+          </view>
+        </view>
+
+
+      </view>
+      <view class="search_suggest" wx:elif="{{ seacrhType==2}}">
+        <view class="suggest_word" data-searchword="{{ searchWord }}" bindtap="clickHistory"> 
+          搜索"{{searchWord}}"
+        </view>
+        <view class="suggest_list">
+         <view class="suggest_item" wx:for="{{searchSuggest}}" wx:key="index" data-searchword="{{ item.keyword }}" bindtap="clickHistory" >
+          <van-icon name="search" class="search_icon" />
+          <view>
+            {{item.keyword}}
+          </view>
+
+
+         </view>
+        </view>
+      </view>
+      <view class="cearch_res" wx:else="{{ seacrhType==3}}">出现了结果</view>
+    </view>
+  </scroll-view>
+</view>

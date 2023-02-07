@@ -1,0 +1,122 @@
+page, .container{
+  width: 100%;
+  height: 100%;
+}
+.container{
+padding-top: 30rpx;
+box-sizing: border-box;
+display: flex;
+flex-direction: column;
+
+}
+.scroll_box{
+  flex: 1;
+  overflow: hidden;
+}
+.search_box{
+  width: 100%;
+  padding: 0 39rpx;
+  box-sizing: border-box;
+  height: 70rpx;
+  position: relative;
+  margin-bottom: 30rpx;
+}
+.search_box input{
+  width: 100%;
+  height: 100%;
+  background-color: #f7f7f7;
+  border-radius: 35rpx;
+  padding-left: 80rpx ;
+  box-sizing: border-box;
+}
+/* 图标样式 */
+.search_box .search_icon{
+  font-size: 40rpx;
+  position: absolute;
+  left: 50rpx;
+  top: 15rpx;
+}
+.search_box .cancel_icon{
+  font-size: 40rpx;
+  position: absolute;
+  right:50rpx;
+  top: 15rpx;
+
+}
+/* 历史记录 */
+.search_container{
+  padding: 0 30rpx;
+}
+.history_list .history_title{
+  display: flex;
+  justify-content: space-between;
+}
+.history_list .history_title .title{
+  font-weight: bold;
+}
+
+.history_list .list{
+  display: flex;
+  margin-top: 20rpx;
+}
+.history_list .list .history_item{
+  height: 60rpx;
+  padding: 0 20rpx ;
+  background-color: #f7f7f7;
+  line-height: 60rpx;
+  border-radius: 35rpx;
+  margin-right: 20rpx;
+  font-size: 28rpx;
+}
+/* 热搜榜 */
+.hot_list{
+  margin-top: 30rpx;
+}
+.hot_list .title{
+  font-weight: bold;
+}
+.hot_list .list .hot_item{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40rpx;
+  align-items: center;
+}
+.hot_list .list .hot_item .item_left{
+  display: flex;
+  align-items: center;
+}
+.hot_list .list .hot_item .item_left .sort.red{
+color: red;
+}
+.hot_list .list .hot_item .item_left .sort{
+  margin-right: 30rpx;
+}
+.hot_list .list .hot_item .item_left .sort.gray{
+  color: gray;
+}
+.hot_list .list .hot_item .item_left .name .top{
+  font-weight: bold;
+   font-size: 34rpx;
+}
+.hot_list .list .hot_item .item_left .name .bottom{
+  color: #999999;
+  font-size: 24rpx;
+}
+.hot_list .list .hot_item .item_right{
+font-size: 24rpx;
+color: #999999;
+}
+/* 搜索关键字 */
+.suggest_word{
+  color: #20d2df;
+}
+.suggest_item{
+  display: flex;
+  color: #999999;
+  font-size: 30rpx;
+  margin-top: 30rpx;
+}
+.suggest_item .search_icon{
+  margin-right: 20rpx;
+  
+}
